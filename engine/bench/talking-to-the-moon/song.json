@@ -1,0 +1,8 @@
+{
+    "reference":  "reference.txt",
+    "artist":  "Bruno Mars",
+    "source":  "UltraStar Deluxe songs folder",
+    "language":  "en",
+    "title":  "Talking to the Moon",
+    "holdout":  true
+}

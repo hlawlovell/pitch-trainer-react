@@ -1,0 +1,6 @@
+*.venv/
+models/
+bench/*/audio.*
+bench/*/work/
+__pycache__/
+service-work/

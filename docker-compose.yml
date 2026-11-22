@@ -1,0 +1,22 @@
+services:
+  # The backup YouTube -> UltraStar converter (UltraSinger). kengine (engine/start-kengine.cmd) hands it
+  # the songs it can't do. The app itself runs outside Docker: start-app.cmd (npm run dev on :8080).
+  converter:
+    build: ./converter
+    image: pitch-trainer-converter
+    container_name: pitch-trainer-converter
+    ports:
+      - "127.0.0.1:8001:8000"   # kengine reaches it here
+    environment:
+      # Whisper model for lyrics: tiny / base / small / medium / large-v2 (bigger = better lyrics, slower)
+      WHISPER_MODEL: ${WHISPER_MODEL:-medium}
+    volumes:
+      # finished UltraStar folders also land here on your PC
+      - ${SONGS_DIR:-./converted-songs}:/songs
+      - converter-models:/models
+      - converter-work:/work      # per-song scratch; kept after a failure so a retry resumes
+    restart: unless-stopped
+
+volumes:
+  converter-models:
+  converter-work:

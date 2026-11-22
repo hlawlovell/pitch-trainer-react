@@ -1,0 +1,26 @@
+# kengine (Windows, Python 3.12, AMD/any DirectX 12 GPU via DirectML)
+#   py -3.12 -m venv .venv
+#   .venv\Scripts\python.exe -m pip install -r requirements.txt
+#   then restore the GPU onnxruntime (faster-whisper / audio-separator pull in the CPU-only one, which
+#   overwrites it; check: python -c "import onnxruntime as o; print(o.get_available_providers())"
+#   must list DmlExecutionProvider):
+#   .venv\Scripts\python.exe -m pip uninstall -y onnxruntime
+#   .venv\Scripts\python.exe -m pip install --force-reinstall --no-deps onnxruntime-directml==1.24.4
+# Models: engine/models/Kim_Vocal_2.onnx and rmvpe.onnx (see HANDOFF.md); MMS aligner and Whisper
+# download themselves on first use.
+audio-separator==0.48.0
+onnxruntime-directml==1.24.4
+torch==2.4.1
+torchaudio==2.4.1
+torch-directml==0.2.5.dev240914
+numpy==2.5.5
+librosa==1.0.1
+soundfile==0.14.0
+uroman==1.3.1.1
+pypinyin==0.55.0
+pykakasi==2.3.0
+opencc-python-reimplemented==0.1.7
+mido==1.3.3
+yt-dlp
+faster-whisper==1.2.1
+Pillow==13.0.0

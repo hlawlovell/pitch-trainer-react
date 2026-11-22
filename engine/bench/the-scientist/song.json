@@ -1,0 +1,8 @@
+{
+    "reference":  "reference.txt",
+    "artist":  "Coldplay",
+    "source":  "UltraStar Deluxe songs folder",
+    "language":  "en",
+    "title":  "The Scientist",
+    "holdout":  true
+}

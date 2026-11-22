@@ -1,0 +1,8 @@
+{
+    "reference":  "reference.txt",
+    "artist":  "Justin Timberlake",
+    "source":  "UltraStar Deluxe songs folder",
+    "language":  "en",
+    "title":  "Mirrors",
+    "holdout":  true
+}
